@@ -7,7 +7,10 @@ const API = import.meta.env.VITE_API + '/movies';
 function App() {
   const [movies, setMovies] = useState([]);
   const [title, setTitle] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
 
   const fetchMovies = async () => {
     const res = await axios.get(API);
@@ -33,6 +36,7 @@ function App() {
 
   useEffect(() => {
     document.body.className = darkMode ? 'dark-mode' : '';
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     fetchMovies();
   }, [darkMode]);
 
