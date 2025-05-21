@@ -6,10 +6,8 @@ A full-stack web application for tracking movies you want to watch — built usi
 
 ## 🌐 Live Demo
 
-* **Frontend (Vercel)**: [https://your-frontend-url.vercel.app](https://your-frontend-url.vercel.app)
-* **Backend (Render API)**: [https://your-backend-url.onrender.com/movies](https://your-backend-url.onrender.com/movies)
-
-> Replace these links with your actual deployed URLs above
+* **Frontend (Vercel)**: [https://movie-watchlist-woad.vercel.app](https://movie-watchlist-woad.vercel.app)
+* **Backend (Render API)**: [https://movie-watchlist-api-frt7.onrender.com/movies](https://movie-watchlist-api-frt7.onrender.com/movies)
 
 ---
 
@@ -17,6 +15,8 @@ A full-stack web application for tracking movies you want to watch — built usi
 
 * Add movies to your personal watchlist
 * Delete movies you no longer want to watch
+* Toggle dark/light mode for UI
+* Responsive and modern styling with clean layout
 * Real-time updates via API
 * Persistent data storage with MongoDB Atlas
 * Fully deployed frontend + backend stack
@@ -42,12 +42,12 @@ A full-stack web application for tracking movies you want to watch — built usi
 
 ---
 
-## 🥪 Setup Instructions
+## 🧪 Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/movie-watchlist.git
+git clone https://github.com/j1do/movie-watchlist.git
 cd movie-watchlist
 ```
 
@@ -80,7 +80,7 @@ npm install
 * Create a `.env` file in the `client/` folder:
 
 ```
-VITE_API=https://your-backend-url.onrender.com
+VITE_API=https://movie-watchlist-api-frt7.onrender.com
 ```
 
 * Start the frontend:
@@ -96,4 +96,3 @@ Visit [http://localhost:5173](http://localhost:5173) to view the app locally.
 ## 👤 Author
 
 **Jimmy (@j1do)**
-Had fun building this as a final project
