@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const API = 'http://localhost:5000/movies';
+const API = import.meta.env.VITE_API + "/movies";
 
 function App() {
   const [movies, setMovies] = useState([]);
