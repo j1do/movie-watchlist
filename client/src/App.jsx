@@ -7,6 +7,7 @@ const API = import.meta.env.VITE_API + '/movies';
 function App() {
   const [movies, setMovies] = useState([]);
   const [title, setTitle] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
 
   const fetchMovies = async () => {
     const res = await axios.get(API);
@@ -31,12 +32,18 @@ function App() {
   };
 
   useEffect(() => {
+    document.body.className = darkMode ? 'dark-mode' : '';
     fetchMovies();
-  }, []);
+  }, [darkMode]);
 
   return (
     <div className="container">
-      <h1>🎬 My Movie Watchlist</h1>
+      <div className="top-bar">
+        <h1>🎬 My Movie Watchlist</h1>
+        <button className="toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? '☀️ Light' : '🌙 Dark'}
+        </button>
+      </div>
       <div className="input-group">
         <input
           value={title}

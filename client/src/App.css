@@ -3,6 +3,7 @@ body {
   font-family: system-ui, sans-serif;
   background-color: #f9f9f9;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -12,12 +13,25 @@ body {
   background: white;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h1 {
   margin-bottom: 20px;
   font-size: 28px;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .input-group {
@@ -65,8 +79,53 @@ button:hover {
   border-radius: 6px;
 }
 
-.movie-list li button {
-  background: transparent;
-  color: #e00;
-  font-size: 16px;
+/* 🌙 Dark mode overrides */
+.container.dark {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.container.dark input {
+  background: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.container.dark .movie-list li {
+  background: #1e1e1e;
+}
+
+.container.dark button {
+  background-color: #444;
+}
+
+.container.dark button:hover {
+  background-color: #666;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode input {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+
+body.dark-mode .container {
+  background-color: #1c1c1c;
+}
+
+body.dark-mode .movie-list li {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode button {
+  background-color: #333;
+}
+
+body.dark-mode button:hover {
+  background-color: #555;
 }
