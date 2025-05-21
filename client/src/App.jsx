@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import './App.css';
 
-const API = import.meta.env.VITE_API + "/movies";
+const API = import.meta.env.VITE_API + '/movies';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -34,19 +35,21 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h1>My Movie Watchlist</h1>
-      <input
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-        placeholder="Movie Title"
-      />
-      <button onClick={addMovie}>Add</button>
-      <ul>
+    <div className="container">
+      <h1>🎬 My Movie Watchlist</h1>
+      <div className="input-group">
+        <input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Enter movie title..."
+        />
+        <button onClick={addMovie}>Add</button>
+      </div>
+      <ul className="movie-list">
         {movies.map(movie => (
           <li key={movie._id}>
             {movie.title}
-            <button onClick={() => deleteMovie(movie._id)}>❌</button>
+            <button onClick={() => deleteMovie(movie._id)}>✖</button>
           </li>
         ))}
       </ul>
